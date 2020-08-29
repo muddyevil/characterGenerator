@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dragon Age Character Generator</title>
+<link rel="stylesheet" href="daGen.css"></link>
+</head>
+<body>
+
+<h1>Generate Dragon Age Character</h1>
+
+<div class="main">
+<div class="Warden">
+<button onclick="createWarden()">Create a Warden</button>
+    <h5 id="wardenGenderTitle"></h5>
+    <p id="wardenGender"></p>
+    <h5 id="wardenRaceTitle"></h5>
+    <p id="wardenRace"></p>
+    <h5 id="wardenClassTitle"></h5>
+    <p id="wardenClass"></p>
+    <h5 id="wardenBackgroundTitle"></h5>
+    <p id="wardenBackground"></p>
+    <h5 id="wardenRomancingTitle"></h5>
+    <p id="romancing"></p>
+    <script>
+      function createWarden() {
+
+// Warden Gender
+
+        document.getElementById("wardenGenderTitle").innerHTML = "Gender:";
+
+        let wardenGenderArr = ["Male", "Female"];
+
+        let wardenGender = wardenGenderArr[Math.floor(Math.random()*wardenGenderArr.length)];
+
+        document.getElementById("wardenGender").innerHTML = wardenGender;
+        
+// Warden Race
+
+        document.getElementById("wardenRaceTitle").innerHTML = "Race:";
+
+        let wardenRaceArr = ["Human", "Dwarf", "Elf"];
+
+        let wardenRace = wardenRaceArr[Math.floor(Math.random()*wardenRaceArr.length)];
+
+        document.getElementById("wardenRace").innerHTML = wardenRace;
+
+// Warden Class
+
+
+        document.getElementById("wardenClassTitle").innerHTML = "Class:";
+        
+        function createClass() {
+
+        if (wardenRace === "Dwarf") {
+            let dwarfClassArr = ["Warrior", "Rogue"];
+            let dwarfClass = dwarfClassArr[Math.floor(Math.random()*dwarfClassArr.length)];
+            return dwarfClass;
+        } else {
+            let classArr = ["Warrior", "Mage", "Rogue"];
+            let humElfClass = classArr[Math.floor(Math.random()*classArr.length)];
+            return humElfClass;
+        }
+        }
+
+        let wardenClass = createClass();
+
+        document.getElementById("wardenClass").innerHTML = wardenClass;
+
+// Warden Background
+
+        document.getElementById("wardenBackgroundTitle").innerHTML = "Background:";
+
+        if (wardenClass === "Mage") {        
+        document.getElementById("wardenBackground").innerHTML = "Magi";
+        } else if (wardenRace === "Human") {
+            document.getElementById("wardenBackground").innerHTML = "Human Noble";
+        } else if (wardenRace === "Elf") {
+            let elfBackArr = ["City Elf", "Dalish Elf"];
+            let elfBack = elfBackArr[Math.floor(Math.random()*elfBackArr.length)];
+            document.getElementById("wardenBackground").innerHTML = elfBack;
+        } else if (wardenRace === "Dwarf") {
+            let dwaBackArr = ["Dwarven Noble", "Dwarven Commoner"];
+            let dwaBack = dwaBackArr[Math.floor(Math.random()*dwaBackArr.length)];
+            document.getElementById("wardenBackground").innerHTML = dwaBack;
+        };
+
+// Warden Romance
+
+        document.getElementById("wardenRomancingTitle").innerHTML = "Romancing:";
+
+        if (wardenGender === "Male") {
+            let maleRomanceArr = ["Morrigan", "Leliana", "Zevran"];
+            let maleRomance = maleRomanceArr[Math.floor(Math.random()*maleRomanceArr.length)];
+            document.getElementById("romancing").innerHTML = maleRomance;
+        } else {
+            let femaleRomanceArr = ["Alistair", "Leliana", "Zevran"];
+            let femaleRomance = femaleRomanceArr[Math.floor(Math.random()*femaleRomanceArr.length)];
+            document.getElementById("romancing").innerHTML = femaleRomance;
+};
+
+      }
+    </script>
+
+</div>
+
+<div class="Hawke">
+
+<button onclick="createHawke()">Create a Hawke</button>
+    <h5 id="hawkeGenderTitle"></h5>
+    <p id="hawkeGender"></p>
+    <h5 id="hawkeClassTitle"></h5>
+    <p id="hawkeClass"></p>
+    <h5 id="hawkeRomancingTitle"></h5>
+    <p id="hawkeRomancing"></p>
+    <h5 id="hawkePersonalityTitle"></h5>
+    <p id="hawkePersonality"></p>
+
+    <script>
+        function createHawke(){
+
+// Hawke Gender
+
+            document.getElementById("hawkeGenderTitle").innerHTML = "Gender:";
+
+            let hawkeGenderArr = ["Male", "Female"];
+
+            let hawkeGender = hawkeGenderArr[Math.floor(Math.random()*hawkeGenderArr.length)];
+
+            document.getElementById("hawkeGender").innerHTML = hawkeGender;
+
+// Hawke Class
+
+            document.getElementById("hawkeClassTitle").innerHTML = "Class:";
+
+            let hawkeClassArr = ["Rogue", "Warrior", "Mage"];
+
+            let hawkeClass = hawkeClassArr[Math.floor(Math.random()*hawkeClassArr.length)];
+
+            document.getElementById("hawkeClass").innerHTML = hawkeClass;
+
+// Hawke Romance
+
+            document.getElementById("hawkeRomancingTitle").innerHTML = "Romancing:";
+
+            let hawkeRomanceArr = ["Fenris", "Anders", "Merrill", "Isabela"]
+
+            let hawkeRomance = hawkeRomanceArr[Math.floor(Math.random()*hawkeRomanceArr.length)];
+
+            document.getElementById("hawkeRomancing").innerHTML = hawkeRomance;
+
+// Hawke Personality
+
+            document.getElementById("hawkePersonalityTitle").innerHTML = "Personality:";
+
+            let hawkePersonalityArr = ["Green", "Purple", "Red", "Mixed"]; 
+
+            let hawkePersonality = hawkePersonalityArr[Math.floor(Math.random()*hawkePersonalityArr.length)];
+
+            document.getElementById("hawkePersonality").innerHTML = hawkePersonality;
+        }
+    </script>
+
+</div>
+
+<div class="Inquisitor">
+
+<button onclick="createInquisitor()">Create an Inquisitor</button>
+    <h5 id="inquisitorGenderTitle"></h5>
+    <p id="inquisitorGender"></p>
+    <h5 id="inquisitorRaceTitle"></h5>
+    <p id="inquisitorRace"></p>
+    <h5 id="inquisitorClassTitle"></h5>
+    <p id="inquisitorClass"></p>
+    <h5 id="inquisitorRomancingTitle"></h5>
+    <p id="inquisitorRomancing"></p>
+
+<script>
+    function createInquisitor(){
+
+// Inquisitor Gender
+
+        document.getElementById("inquisitorGenderTitle").innerHTML = "Gender:";
+
+        let inquisitorGenderArr = ["Male", "Female"];
+
+        let inquisitorGender = inquisitorGenderArr[Math.floor(Math.random()*inquisitorGenderArr.length)];
+
+        document.getElementById("inquisitorGender").innerHTML = inquisitorGender;
+
+// inquisitor Race
+
+        document.getElementById("inquisitorRaceTitle").innerHTML = "Race:";
+
+        let inquisitorRaceArr = ["Human", "Dwarf", "Elf", "Qunari"];
+
+        let inquisitorRace = inquisitorRaceArr[Math.floor(Math.random()*inquisitorRaceArr.length)];
+
+        document.getElementById("inquisitorRace").innerHTML = inquisitorRace;
+
+// inquisitor Class
+
+        document.getElementById("inquisitorClassTitle").innerHTML = "Class:";
+
+        function createClass() {
+
+        if (inquisitorRace === "Dwarf") {
+            let dwarfClassArr = ["Warrior", "Rogue"];
+            let dwarfClass = dwarfClassArr[Math.floor(Math.random()*dwarfClassArr.length)];
+            return dwarfClass;
+
+        } else {
+            let classArr = ["Warrior", "Mage", "Rogue"];
+            let humElfClass = classArr[Math.floor(Math.random()*classArr.length)];
+            return humElfClass;
+}
+}
+
+        let inquisitorClass = createClass();
+
+        document.getElementById("inquisitorClass").innerHTML = inquisitorClass;
+
+// Inquisitor Romance
+
+        document.getElementById("inquisitorRomancingTitle").innerHTML = "Romancing:";
+
+        if (inquisitorRace === "Elf" & inquisitorGender === "Female") {
+            let elfFemaleRomanceArr = ["Blackwall", "Cullen", "Iron Bull", "Josephine", "Sera", "Solas (I am so so sorry)"];
+            let elfFemaleRomance = elfFemaleRomanceArr[Math.floor(Math.random()*elfFemaleRomanceArr.length)];
+            document.getElementById("inquisitorRomancing").innerHTML = elfFemaleRomance;
+        } else if (inquisitorRace === "Human" & inquisitorGender === "Female") {
+            let humanFemaleRomanceArr = ["Blackwall", "Cullen", "Iron Bull", "Josephine", "Sera"];
+            let humanFemaleRomance = humanFemaleRomanceArr[Math.floor(Math.random()*humanFemaleRomanceArr.length)];
+            document.getElementById("inquisitorRomancing").innerHTML = humanFemaleRomance;
+        } else if (inquisitorGender === "Female") {
+            let femaleInqRomanceArr = ["Blackwall", "Sera", "Iron Bull", "Josephine"]
+            let femaleInqRomance = femaleInqRomanceArr[Math.floor(Math.random()*femaleInqRomanceArr.length)];
+            document.getElementById("inquisitorRomancing").innerHTML = femaleInqRomance;
+        } else {
+            let maleInqRomanceArr = ["Dorian", "Cassandra", "The Iron Bull", "Josephine"];
+            let maleInqRomance = maleInqRomanceArr[Math.floor(Math.random()*maleInqRomanceArr.length)];
+            document.getElementById("inquisitorRomancing").innerHTML = maleInqRomance;
+        };
+
+    }
+</script>
+</div>
+
+</div>
+
+</body>
+</html>
