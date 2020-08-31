@@ -14,7 +14,7 @@
     <tbody>
     <tr>
     <td>
-        <button onclick="setRace(), setClas(), setBackground()">Randomise All</button>
+        <button onclick="setRace(), setClas(), setBackground(), setAlignment()">Randomise All</button>
     </div></td>
     </tr>
     <tr>
@@ -31,7 +31,12 @@
         <td><button onclick="setBackground()">Background</button></p></td>
         <td><p id="background"></p></td>
         <td></td>
-        </tr>
+    </tr>
+    <tr>
+        <td><button onclick="setAlignment()">Alignment</button></p></td>
+        <td><p id="alignment"></p></td>
+        <td></td>
+    </tr>
     </tbody>
     </table>
 </div>
@@ -205,6 +210,15 @@ let backArr = ["Acolyte", "Anthropologist", "Archeologist", "Athlete", "Augen Tr
 let back = backArr[Math.floor(Math.random()*backArr.length)];
 
 document.getElementById("background").innerHTML = back;
+}
+
+function setAlignment() {
+
+    let alignArr = ["Chaotic Evil", "Neutral Evil", "Lawful Evil", "Chaotic Neutral", "True Neutral", "Lawful Neutral", "Chaotic Good", "Neutral Good", "Lawful Good"] 
+
+    let alignment = alignArr[Math.floor(Math.random()*alignArr.length)];
+
+    document.getElementById("alignment").innerHTML = alignment;
 }
 
 </script>
