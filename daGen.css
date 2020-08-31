@@ -2,6 +2,13 @@ body {
     background-color: #fef7cc;
 }
 
+table {
+    padding: 10px 10px;
+    text-align: center;
+    width: 90%;
+    height: auto;
+}
+
 button {
     background-color:#fed9cc;
 	border-radius:28px;
