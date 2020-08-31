@@ -97,7 +97,7 @@
 
 function setClas () {
 
-let classArr = ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Mystic", "Paladin", "Ranger", "Rogue", "Sorceror", "Warlock", "Wizard", "Blood Hunter"];
+let classArr = ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorceror", "Warlock", "Wizard", "Blood Hunter"];
 
 let clas = classArr[Math.floor(Math.random()*classArr.length)];
 
@@ -148,12 +148,6 @@ if (clas === "Artificer") {
     let mon = monArr[Math.floor(Math.random()*monArr.length)];
 
     return mon
-} else if (clas === "Mystic") {
-    let mysArr = ["Avatar", "Awakened", "Immortal", "Nomad", "Soul Knife", "Wu Jen"];
-
-    let mys = mysArr[Math.floor(Math.random()*mysArr.length)];
-
-    return mys
 } else if (clas === "Paladin") {
     let palArr = ["Oath of the Ancients", "Oath of Conquest", "Oath of the Crown", "Oath of Devotion", "Oath of Glory", "Oath of Heroism", "Oathbreaker", "Oath of Redemption", "Oath of Treachery", "Oath of Vengeance", "Oath of Watchers"];
 
