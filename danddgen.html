@@ -6,14 +6,33 @@
 </head>
 <body>
 
-<h1>Generate Dragon Age Character</h1>
+<h1>Generate Dungeons and Dragons Character (wip)</h1>
 
 <div class="main">
-        <button onclick="setRace()">Race</button>
-            <p id="race"></p>
-            <p id="subrace"></p>
-        <script>
-            function setRace() {
+
+<table>
+    <tbody>
+    <tr>
+    <td>
+        <button onclick="setRace(), setClas()">Randomise All</button>
+    </div></td>
+    </tr>
+    <tr>
+    <td><button onclick="setRace()">Race</button></td>
+    <td><p id="race"></p></td>
+    <td><p id="subrace"></p></td>
+    </tr>
+    <tr>
+    <td><button onclick="setClas()">Class</button></p></td>
+    <td><p id="class"></p></td>
+    <td><p id="subclass"></p></td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+
+<script>
+    function setRace() {
 
 // Randomise Race
 
@@ -73,30 +92,19 @@
             }
             document.getElementById("subrace").innerHTML = setSubRace();
         }
-    </script>
 
-    </div>
+        // class
 
-<div class="main">
-
-    <button onclick="setClass()">Class</button>
-    <p id="class"></p>
-    <p id="subclass"></p>
-<script>
-
-// class
-
-function setClass () {
+function setClas () {
 
 let classArr = ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Mystic", "Paladin", "Ranger", "Rogue", "Rune Scribe", "Sorceror", "Warlock", "Wizard", "Blood Hunter"];
 
 let clas = classArr[Math.floor(Math.random()*classArr.length)];
 
 document.getElementById("class").innerHTML = clas;
-
 // subclasses
 
-function setSubClass () {
+function setSubClas () {
 
 if (clas === "Artificer") {
         let artArr = ["Alchemist", "Artillerist", "Battle Smith"];
@@ -187,14 +195,12 @@ if (clas === "Artificer") {
 
     return wiz
 } else {
-    console.log("");
+    return " "
 };
 };
-    document.getElementById("subclass").innerHTML = setSubClass();
+    document.getElementById("subclass").innerHTML = setSubClas();
 }
 </script>
-</div>
-</div>
 
 </body>
 
