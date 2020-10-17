@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dragon Age Character Generator</title>
+<title>Dungeons and Dragons Character Generator</title>
 <link rel="stylesheet" href="daGen.css"></link>
 </head>
 <body>
 
 <h1>Generate Dungeons and Dragons Character (wip)</h1>
-
-<div class="main">
 
 <table>
     <tbody>
@@ -39,7 +37,6 @@
     </tr>
     </tbody>
     </table>
-</div>
 
 <script>
     function setRace() {
@@ -51,6 +48,16 @@
             let race = raceArr[Math.floor(Math.random()*raceArr.length)];
 
             document.getElementById("race").innerHTML = race;
+
+// Get more info on Race
+
+            let raceInfo = document.createElement("a");
+
+            document.getElementById("race").appendChild(raceInfo);
+
+            raceInfo.innerHTML = "Get More Info";
+            raceInfo.setAttribute = ("class", "moreInfo");
+            raceInfo.href = `${race}.html`;
 
 // Subraces
             
@@ -103,7 +110,7 @@
             document.getElementById("subrace").innerHTML = setSubRace();
         }
 
-        // class
+// class
 
 function setClas () {
 
@@ -112,6 +119,7 @@ let classArr = ["Artificer", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", 
 let clas = classArr[Math.floor(Math.random()*classArr.length)];
 
 document.getElementById("class").innerHTML = clas;
+
 // subclasses
 
 function setSubClas () {
@@ -203,6 +211,8 @@ if (clas === "Artificer") {
     document.getElementById("subclass").innerHTML = setSubClas();
 }
 
+// Background
+
 function setBackground() {
 
 let backArr = ["Acolyte", "Anthropologist", "Archeologist", "Athlete", "Augen Trust Spy", "Azorius Functionary", "Boros Legionnaire", "Celebrity Adventurer's Scion", "Charlatan", "City Watch", "City Watch Investigator", "Clan Crafter", "Cloistered Scholar", "Cobalt Scholar", "Courtier", "Criminal", "Criminal (Spy)", "Dimir Operative", "Entertainer", "Gladiator", "Faceless", "Faction Agent", "Failed Merchant", "Far Traveler", "Fisher", "Folk Hero", "Gambler", "Golgari Agent", "Grinner", "Gruul Anarch", "Guild Artisan", "Guild Merchant", "Haunted One", "Hermit", "House Agent", "Inheritor", "Izzet Engineer", "Knight of the Order", "Luxonborn Acolyte", "Marine", "Mercenary Veteran", "Myriad Operative", "Noble", "Knight", "Orzhov Representative", "Outlander", "Plaintiff", "Rakdos Cultist", "Revelry Pirate", "Rival Intern", "Sage", "Sailor", "Pirate", "Selesnya Initiate", "Shipwright", "Simis Scientist", "Smuggler", "Soldier", "Urban Bounty Hunter", "Urchin", "Uthgardt Tribe Member", "Volstrucker Agent", "Waterdhavian Noble"];
@@ -211,6 +221,8 @@ let back = backArr[Math.floor(Math.random()*backArr.length)];
 
 document.getElementById("background").innerHTML = back;
 }
+
+// Alignment
 
 function setAlignment() {
 
